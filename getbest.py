@@ -4,6 +4,7 @@ import sys
 
 def getCols(f):
     ''' Idenify the columns that contain the marks and student numbers '''
+    ''' Index was not incrememting and starting from an incorrect value'''
     headings = f.readline().strip().split(",")
     i = 0
     for head in headings:
@@ -14,6 +15,7 @@ def getCols(f):
 
 def findTop(f,num_col, mark_col):
     ''' finds the top student in the class '''
+    ''' Student number was not being recovered'''
     best = best_idx =  0
     for line in f:
         data = line.strip().split(",")
@@ -23,7 +25,7 @@ def findTop(f,num_col, mark_col):
             best_idx = int(data[num_col])
     return best_idx, best
 def data(testF):
-
+    ''' Is used by the Unit test code to open the csv file that contains the data'''
     f = open(testF)
     return f
 
